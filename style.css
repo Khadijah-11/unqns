@@ -12,7 +12,7 @@ body {
 }
 body {
     margin: 0; /* Remove body margin */
-    padding-top: 10vh; /* Add padding equal to navbar height */
+    padding-top: 16vh; /* Increased from 10vh to create more space below navbar */
     background-color: #EFEFEF;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 /* Gallery Section Styles */
 .gallery-section {
-    padding: 50px 20px;
+    padding: 20px 20px; /* Reduced top padding since we added more padding to body */
     background-color: #EFEFEF;
     color: #000000;
     text-align: center;
@@ -150,31 +150,32 @@ body {
 
 /* Navbar Styling */
 .nav {
-    position: fixed; /* Fix navbar at the top */
-    top: 0; 
-    left: 0;
-    z-index: 1000; /* Ensure it stays above other elements */
-    height: 8vh; /* Reduce the overall navbar height */
-    width: 100%; /* Full page width */
-    background-color: #EFEFEF;
-    display: flex;
-    justify-content: center; /* Center the nav2 container horizontally */
-    padding: 0;
-    margin: 0; /* Remove any default margin */
-    border-bottom: 2px solid #000; /* Black bottom border */
-    box-sizing: border-box; /* Include borders in height/width */
-}
-
-/* Navbar items container */
+        position: fixed; /* Fix navbar at the top */
+        top: 0; 
+        left: 0;
+        z-index: 1000; /* Ensure it stays above other elements */
+        height: 8vh; /* Reduce the overall navbar height */
+        width: 100%; /* Full page width */
+        background-color: #EFEFEF;
+        display: flex;
+        justify-content: center; /* Center the nav2 container horizontally */
+        padding: 0;
+        margin: 0; /* Remove any default margin */
+        border-bottom: 2px solid #000; /* Black bottom border */
+        box-sizing: border-box; /* Include borders in height/width */
+    }
+    
+    /* Navbar items container */
 .nav2 {
-    display: flex;
-    width: 100%; /* Stretch container to full width */
-    height: 100%; /* Stretch container to full height */
-    margin: 0; /* Remove gaps around the container */
-    padding: 0; /* Remove padding inside the container */
-    box-sizing: border-box; /* Include borders in size calculation */
-}
-
+        display: flex;
+        width: 100%; /* Stretch container to full width */
+        height: 100%; /* Stretch container to full height */
+        margin: 0; /* Remove gaps around the container */
+        padding: 0; /* Remove padding inside the container */
+        box-sizing: border-box; /* Include borders in size calculation */
+    }
+    
+    /* Navbar items styling */
 /* Navbar items styling */
 .nav h4 {
     flex: 1; /* Each item takes up equal space */
@@ -195,9 +196,18 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Remove the border from the last item */
-.nav h4:last-child {
-    border-right: none;
+.nav h4 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Allow full clickable area */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 8vh; /* Center text vertically based on navbar height */
+}
+
+.nav h4 a:hover {
+    color: #EFEFEF; /* Light text color on hover */
 }
 
 /* Hover effect for all navbar items except UNQNS */
@@ -250,4 +260,9 @@ body {
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Update the link styles for active state */
+.nav h4.active:not(.unqns) a {
+    color: #EFEFEF; /* Light text color */
 }

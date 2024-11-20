@@ -18,11 +18,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navbar active class toggle
     const navbarItems = document.querySelectorAll('.nav h4');
     if (navbarItems.length > 0) {
+        // Set initial active state based on current page
+        const currentPath = window.location.pathname;
         navbarItems.forEach((item) => {
-            item.addEventListener('click', function () {
-                navbarItems.forEach((navItem) => navItem.classList.remove('active'));
-                this.classList.add('active');
-            });
+            const link = item.querySelector('a');
+            if (link && link.getAttribute('href') === currentPath) {
+                item.classList.add('active');
+            }
+        });
+
+        // Handle click events
+        navbarItems.forEach((item) => {
+            if (!item.classList.contains('unqns')) {
+                item.addEventListener('click', function() {
+                    navbarItems.forEach((navItem) => {
+                        if (!navItem.classList.contains('unqns')) {
+                            navItem.classList.remove('active');
+                        }
+                    });
+                    this.classList.add('active');
+                });
+            }
         });
     } else {
         console.warn('.nav h4 elements not found');
@@ -43,4 +59,19 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn('.gallery-grid img elements not found');
     }
+    document.querySelectorAll('.carousel').forEach((carousel) => {
+        let scrollAmount = 0;
+        const scrollStep = 2; // Customize this value as needed
+        const scrollInterval = setInterval(() => {
+            carousel.scrollLeft += scrollStep;
+            scrollAmount += scrollStep;
+    
+            // Loop carousel when end is reached
+            if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+                carousel.scrollLeft = 0;
+                scrollAmount = 0;
+            }
+        }, 20); // Adjust interval timing for smoothness
+    });
+    
 });
