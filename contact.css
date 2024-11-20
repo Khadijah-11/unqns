@@ -1,0 +1,228 @@
+/* General Styles */
+body {
+    font-family: 'Input Mono', monospace;
+    color: #333;
+    background-color: #EFEFEF;
+    margin: 0;
+    padding: 0;
+    padding-top: 12vh;
+}
+
+/* Navbar */
+
+/* Navbar container */
+.nav {
+    position: fixed; /* Fix navbar at the top */
+    top: 0; 
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    height: 8vh; /* Standard height for the navbar */
+    width: 100%; /* Full width of the page */
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center; /* Center content */
+    padding: 0;
+    margin: 0; /* Remove any default margin */
+    border-bottom: 2px solid #000; /* Black bottom border */
+    box-sizing: border-box; /* Include borders in size calculation */
+}
+
+/* Navbar items container */
+.nav2 {
+    display: flex;
+    width: 100%; /* Stretch the container to full width */
+    height: 100%; /* Match navbar height */
+    margin: 0; /* Remove gaps around the container */
+    padding: 0; /* Remove padding inside the container */
+    box-sizing: border-box; /* Include borders in size calculation */
+}
+
+/* Navbar items */
+.nav h4 {
+    flex: 1; /* Each item takes up equal space */
+    display: flex; /* Use flex for centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: Ppneuemontreal Variable, sans-serif;
+    margin: 0;
+    padding: 5px 0;
+    border-right: 1px solid #000; /* Black border between items */
+    height: 100%; /* Match navbar height */
+    box-sizing: border-box; /* Include borders in size calculation */
+    background-color: #EFEFEF; /* Default background */
+    color: #1E1E1E; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for <a> tags within h4 */
+.nav h4 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link fill the h4 */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 8vh; /* Match the navbar height */
+}
+
+/* Remove border from the last item */
+.nav h4:last-child {
+    border-right: none;
+}
+
+/* Hover and active effect for all items except UNQNS */
+.nav h4:hover:not(.unqns) {
+    background-color: #1E1E1E;
+    color: #EFEFEF;
+}
+
+/* UNQNS item (fixed colors) */
+.nav h4.unqns {
+    background-color: #1E1E1E; /* Always dark background */
+    color: #EFEFEF; /* Always light text color */
+    border-right: 1px solid #000; /* Retain the border */
+}
+
+/* UNQNS hover state (no changes) */
+.nav h4.unqns:hover,
+.nav h4.unqns.active {
+    background-color: #1E1E1E; /* Dark background */
+    color: #EFEFEF; /* Light text color */
+}
+
+/* Add specific styling for active links */
+    .nav h4.active:not(.unqns) a {
+    color: #EFEFEF; /* Light text color */
+}
+
+    .nav h4.active:not(.unqns) {
+    background-color: #1E1E1E; /* Dark background */
+    color: #EFEFEF; /* Light text color */
+}
+
+
+    
+ /* Custom cursor styles */
+.cursor {
+        width: 20px;
+        height: 20px;
+        background-color: gray;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        opacity: 0.8; /* Slightly transparent */
+        transition: transform 0.2s ease, background-color 0.2s ease;
+}
+    
+.cursor.hover {
+        transform: scale(1.5); /* Slightly enlarge on hover */
+        background-color: #1e1e1e; /* Darker gray on hover */
+}
+
+/* Contact Form Styles */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.contact-container h1 {
+    font-family: Ppneuemontreal Variable, sans-serif;
+    font-size: 3em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #1E1E1E;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #1E1E1E;
+    background: transparent;
+    font-family: 'Input Mono', monospace;
+    font-size: 16px;
+    color: #1E1E1E;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-family: 'Input Mono', monospace;
+    color: #1E1E1E;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1E1E1E;
+    background: rgba(30, 30, 30, 0.05);
+}
+
+.form-group input:focus ~ label,
+.form-group textarea:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:valid ~ label {
+    top: -25px;
+    left: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    padding: 15px 40px;
+    border: 2px solid #1E1E1E;
+    background: #EFEFEF;
+    color: #1E1E1E;
+    font-family: Ppneuemontreal Variable, sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #1E1E1E;
+    color: #EFEFEF;
+}
+
+/* Make the form responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+    }
+    
+    .contact-container h1 {
+        font-size: 2em;
+    }
+    
+    .contact-form button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,180 @@
+/* General Styles */
+body {
+    font-family: 'Input Mono', monospace;
+    color: #333;
+    background-color: #EFEFEF;
+    margin: 0;
+    padding: 0;
+    padding-top: 12vh;
+}
+
+/* Navbar */
+
+/* Navbar container */
+.nav {
+    position: fixed; /* Fix navbar at the top */
+    top: 0; 
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    height: 8vh; /* Standard height for the navbar */
+    width: 100%; /* Full width of the page */
+    background-color: #EFEFEF;
+    display: flex;
+    justify-content: center; /* Center content */
+    padding: 0;
+    margin: 0; /* Remove any default margin */
+    border-bottom: 2px solid #000; /* Black bottom border */
+    box-sizing: border-box; /* Include borders in size calculation */
+}
+
+/* Navbar items container */
+.nav2 {
+    display: flex;
+    width: 100%; /* Stretch the container to full width */
+    height: 100%; /* Match navbar height */
+    margin: 0; /* Remove gaps around the container */
+    padding: 0; /* Remove padding inside the container */
+    box-sizing: border-box; /* Include borders in size calculation */
+}
+
+/* Navbar items */
+.nav h4 {
+    flex: 1; /* Each item takes up equal space */
+    display: flex; /* Use flex for centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: Ppneuemontreal Variable, sans-serif;
+    margin: 0;
+    padding: 5px 0;
+    border-right: 1px solid #000; /* Black border between items */
+    height: 100%; /* Match navbar height */
+    box-sizing: border-box; /* Include borders in size calculation */
+    background-color: #EFEFEF; /* Default background */
+    color: #1E1E1E; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for <a> tags within h4 */
+.nav h4 a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link fill the h4 */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 8vh; /* Match the navbar height */
+}
+
+/* Remove border from the last item */
+.nav h4:last-child {
+    border-right: none;
+}
+
+/* Hover and active effect for all items except UNQNS */
+.nav h4:hover:not(.unqns) {
+    background-color: #1E1E1E;
+    color: #EFEFEF;
+}
+
+/* UNQNS item (fixed colors) */
+.nav h4.unqns {
+    background-color: #1E1E1E; /* Always dark background */
+    color: #EFEFEF; /* Always light text color */
+    border-right: 1px solid #000; /* Retain the border */
+}
+
+/* UNQNS hover state (no changes) */
+.nav h4.unqns:hover,
+.nav h4.unqns.active {
+    background-color: #1E1E1E; /* Dark background */
+    color: #EFEFEF; /* Light text color */
+}
+
+/* Add specific styling for active links */
+    .nav h4.active:not(.unqns) a {
+    color: #EFEFEF; /* Light text color */
+}
+
+    .nav h4.active:not(.unqns) {
+    background-color: #1E1E1E; /* Dark background */
+    color: #EFEFEF; /* Light text color */
+}
+
+
+    
+ /* Custom cursor styles */
+.cursor {
+        width: 20px;
+        height: 20px;
+        background-color: gray;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        opacity: 0.8; /* Slightly transparent */
+        transition: transform 0.2s ease, background-color 0.2s ease;
+}
+    
+.cursor.hover {
+        transform: scale(1.5); /* Slightly enlarge on hover */
+        background-color: #1e1e1e; /* Darker gray on hover */
+}
+
+/* Team Grid Styles */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+}
+
+.team-member img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.member-info {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #EFEFEF;
+    transition: bottom 0.3s ease;
+}
+
+.member-info h3 {
+    margin: 0;
+    font-family: Ppneuemontreal Variable, sans-serif;
+    font-size: 1.2rem;
+}
+
+.member-info p {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
+
+/* Hover Effects */
+.team-member:hover img {
+    filter: brightness(0.7);
+}
+
+.team-member:hover .member-info {
+    bottom: 0;
+}

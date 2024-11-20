@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
     // Custom cursor functionality
     const cursor = document.querySelector('.cursor');
     if (cursor) {
@@ -13,35 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         console.warn('.cursor element not found');
-    }
-
-    // Navbar active class toggle
-    const navbarItems = document.querySelectorAll('.nav h4');
-    if (navbarItems.length > 0) {
-        // Set initial active state based on current page
-        const currentPath = window.location.pathname;
-        navbarItems.forEach((item) => {
-            const link = item.querySelector('a');
-            if (link && link.getAttribute('href') === currentPath) {
-                item.classList.add('active');
-            }
-        });
-
-        // Handle click events
-        navbarItems.forEach((item) => {
-            if (!item.classList.contains('unqns')) {
-                item.addEventListener('click', function() {
-                    navbarItems.forEach((navItem) => {
-                        if (!navItem.classList.contains('unqns')) {
-                            navItem.classList.remove('active');
-                        }
-                    });
-                    this.classList.add('active');
-                });
-            }
-        });
-    } else {
-        console.warn('.nav h4 elements not found');
     }
 
     // Gallery hover effect
