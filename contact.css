@@ -8,6 +8,10 @@ body {
     padding-top: 12vh;
 }
 
+* {
+    cursor: none;
+}
+
 /* Navbar */
 
 /* Navbar container */

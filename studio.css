@@ -1,3 +1,7 @@
+* {
+    cursor: none;
+}
+
 /* General Styles */
 body {
     font-family: 'Input Mono', monospace;
@@ -510,7 +514,7 @@ body {
 /* Add this to your existing CSS */
 .services {
     padding: 80px 50px;
-    background-color: #EFEFEF;
+    background-color: #808080;
 }
 
 .services h2 {
