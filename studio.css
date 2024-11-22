@@ -167,195 +167,159 @@ body {
 /* Carousel Section */
 .carousel-section {
     position: relative;
-    background-color: #EFEFEF;
-    padding: 20px 0;
-    overflow: hidden; /* Prevent overflow */
+    background-color: #1E1E1E;
+    padding: 40px 0;
+    overflow: hidden;
 }
 
-/* Scroll Band */
+/* Scroll Band - Restored animation */
 .scroll-band {
-    background-color: #000;
+    background-color: #1E1E1E;
     color: #EFEFEF;
     font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px 0;
+    font-weight: 800;
+    padding: 15px 0;
     text-align: center;
     overflow: hidden;
     white-space: nowrap;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .scroll-band p {
-    animation: scroll-text 10s linear infinite;
+    animation: scroll-text 20s linear infinite;
     margin: 0;
+    display: inline-block;
+    padding-right: 50px;
 }
 
-.top-scroll-band {
-    margin-bottom: 0; 
-}
-
-.bottom-scroll-band {
-    margin-top: 0; 
-}
-
-/* Scrolling animation for bands */
-@keyframes scroll-text {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* Carousel */
+/* Carousel styling */
 .carousel {
     display: flex;
-    overflow: hidden; /* Hide images that move out of view */
+    overflow: hidden;
     width: 100%;
     box-sizing: border-box;
-    padding: 0;
+    padding: 40px 0;
+    gap: 20px;
+    animation: scroll-carousel 30s linear infinite;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    will-change: transform;
 }
 
 .carousel img {
-    width: 300px; /* Ensure consistent image width */
-    height: 200px; /* Ensure consistent image height */
-    object-fit: cover; /* Fit the image without distortion */
-    border: 0; /* Remove any border */
-    flex-shrink: 0; /* Prevent images from shrinking */
-}
-/* First Header */
-.studio-header1 {
-    text-align: left;
-    padding: 20px 50px;
-    background-color: #EFEFEF;
-    color: #000;
-    margin-top: 40px;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border: none;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.studio-header1 h1 {
-    font-size: 6rem;
-    margin: 0;
-    color: #000;
+.carousel img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
 
-/* Agency Features */
-.agency-features {
-    padding: 50px 50px;
-    background-color: #F4F4F4;
-}
-
-.agency-features h2 {
-    font-size: 3rem;
-    color: #000;
-    margin-bottom: 20px;
-}
-
-.agency-features p {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.agency-features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.agency-features ul li {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-
-
-/* Scroll Band */
-.scroll-band {
-    background-color: #000;
-    color: #EFEFEF;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-}
-
-.scroll-band p {
-    animation: scroll-text 10s linear infinite;
-    margin: 0;
-}
-
-.top-scroll-band {
-    margin-bottom: 0;
-}
-
-.bottom-scroll-band {
-    margin-top: 0;
-}
-
-
-
-
-
-
-/* Top Scrolling Band */
-.scroll-band {
-    background-color: #000;
-    color: #EFEFEF;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.scroll-band p {
-    animation: scroll-text 10s linear infinite;
-    margin: 0;
-}
-
-.top-scroll-band {
-    margin-bottom: 0;
-}
-
-
-
-/* Bottom Sponsors Carousel */
+/* Sponsors carousel */
 .sponsors-carousel {
     display: flex;
-    overflow: hidden;
-    padding: 10px 0;
-    background-color: #EFEFEF;
-    gap: 10px;
-    animation: scroll-sponsors 15s linear infinite;
+    padding: 40px 0;
+    background-color: #1E1E1E;
+    gap: 40px;
+    animation: scroll-sponsors 25s linear infinite;
+    width: fit-content;
+    will-change: transform;
 }
 
 .sponsors-carousel img {
     width: 200px;
     height: 100px;
     object-fit: contain;
-    flex-shrink: 0;
-    border: 2px solid #fff;
-    background-color: #fff;
-    border-radius: 5px;
+    filter: invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-/* Scrolling Animations */
+.sponsors-carousel img:hover {
+    opacity: 1;
+}
 
+/* Header Sections */
+.studio-header, .studio-header1 {
+    text-align: left;
+    padding: 80px 50px;
+    background-color: #1E1E1E;
+    color: #EFEFEF;
+    margin-top: 0;
+}
+
+.studio-header h1, .studio-header1 h1 {
+    font-size: 6rem;
+    margin: 0;
+    color: #EFEFEF;
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 50px;
+    background-color: #1E1E1E;
+    color: #EFEFEF;
+}
+
+.about-section p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Agency Features */
+.agency-features {
+    padding: 80px 50px;
+    background-color: #1E1E1E;
+    color: #EFEFEF;
+}
+
+.agency-features h2 {
+    font-size: 4rem;
+    color: #EFEFEF;
+    margin-bottom: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.agency-features ul li {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes scroll-text {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes scroll-carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-400px * 5 - 20px * 5)); }
+}
 
 @keyframes scroll-sponsors {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 5 - 40px * 5)); }
 }
-
 
 /* Why Clients Seek Us Out Section */
 .why-clients-choose-us {
