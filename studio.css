@@ -131,7 +131,7 @@ body {
 
 /* Header Section */
 .studio-header {
-    text-align: left;
+    text-align: center;
     padding: 20px 50px;
     background-color: #EFEFEF;
     color: #000;
@@ -142,6 +142,7 @@ body {
     font-size: 6rem;
     margin: 0;
     color: #000;
+    text-align: center;
 }
 
 /* About Section */
