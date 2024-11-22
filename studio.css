@@ -146,11 +146,31 @@ body {
 
 /* About Section */
 .about-section {
-    text-align: left; /* Align text to the left */
-    padding: 0; /* Remove extra padding */
-    max-width: 1200px; /* Restrict the width */
-    margin: 0 50px; /* Add left/right margins only */
-    box-sizing: border-box; /* Ensure padding/margin are calculated */
+    text-align: left;
+    padding: 40px 50px; /* Fixed padding on sides */
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Add fixed-width white spaces using pseudo-elements */
+.about-section::before,
+.about-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px; /* Fixed width */
+    height: 100%;
+    background-color: #EFEFEF;
+}
+
+.about-section::before {
+    left: -50px; /* Position left block */
+}
+
+.about-section::after {
+    right: -50px; /* Position right block */
 }
 
 /* Paragraph Styling */
@@ -158,8 +178,29 @@ body {
     font-size: 1.5rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    margin: 0; /* Reset any default margins */
-    text-align: left; /* Ensure text is left-aligned */
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 40px 30px;
+    }
+    
+    .about-section::before,
+    .about-section::after {
+        width: 30px;
+    }
+    
+    .about-section::before {
+        left: -30px;
+    }
+    
+    .about-section::after {
+        right: -30px;
+    }
 }
 
 
