@@ -4,8 +4,8 @@
 
 /* General Styles */
 body {
-    font-family: 'Input Mono', monospace;
-    color: #333;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #000;
     background-color: #EFEFEF;
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ body {
     justify-content: center; /* Center content */
     padding: 0;
     margin: 0; /* Remove any default margin */
-    border-bottom: 2px solid #000; /* Black bottom border */
+    border-bottom: 1px solid #000; /* Black bottom border */
     box-sizing: border-box; /* Include borders in size calculation */
 }
 
@@ -48,7 +48,7 @@ body {
     align-items: center; /* Center text vertically */
     justify-content: center; /* Center text horizontally */
     font-size: 25px;
-    font-weight: 800;
+    font-weight: 500;
     text-transform: uppercase;
     font-family: Ppneuemontreal Variable, sans-serif;
     margin: 0;
@@ -57,7 +57,7 @@ body {
     height: 100%; /* Match navbar height */
     box-sizing: border-box; /* Include borders in size calculation */
     background-color: #EFEFEF; /* Default background */
-    color: #1E1E1E; /* Default text color */
+    color: #000; /* Default text color */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -79,13 +79,13 @@ body {
 
 /* Hover and active effect for all items except UNQNS */
 .nav h4:hover:not(.unqns) {
-    background-color: #1E1E1E;
+    background-color: #000;
     color: #EFEFEF;
 }
 
 /* UNQNS item (fixed colors) */
 .nav h4.unqns {
-    background-color: #1E1E1E; /* Always dark background */
+    background-color: #000; /* Always dark background */
     color: #EFEFEF; /* Always light text color */
     border-right: 1px solid #000; /* Retain the border */
 }
@@ -93,7 +93,7 @@ body {
 /* UNQNS hover state (no changes) */
 .nav h4.unqns:hover,
 .nav h4.unqns.active {
-    background-color: #1E1E1E; /* Dark background */
+    background-color: #000; /* Dark background */
     color: #EFEFEF; /* Light text color */
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
     .nav h4.active:not(.unqns) {
-    background-color: #1E1E1E; /* Dark background */
+    background-color: #000; /* Dark background */
     color: #EFEFEF; /* Light text color */
 }
 
@@ -208,15 +208,15 @@ body {
 /* Carousel Section */
 .carousel-section {
     position: relative;
-    background-color: #1E1E1E;
+    background-color: #EFEFEF;
     padding: 40px 0;
     overflow: hidden;
 }
 
 /* Scroll Band - Restored animation */
 .scroll-band {
-    background-color: #1E1E1E;
-    color: #EFEFEF;
+    background-color: #EFEFEF;
+    color: #000;
     font-size: 1.2rem;
     font-weight: 800;
     padding: 15px 0;
@@ -258,12 +258,10 @@ body {
     height: 300px;
     object-fit: cover;
     border: none;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .carousel img:hover {
-    filter: grayscale(0%);
     transform: scale(1.05);
 }
 
@@ -271,39 +269,39 @@ body {
 .sponsors-carousel {
     display: flex;
     padding: 40px 0;
-    background-color: #1E1E1E;
+    background-color: #EFEFEF;
     gap: 40px;
     animation: scroll-sponsors 25s linear infinite;
     width: fit-content;
     will-change: transform;
+    transform: translateX(100%);
 }
 
 .sponsors-carousel img {
     width: 200px;
     height: 100px;
     object-fit: contain;
-    filter: invert(1);
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    opacity: 1; /* Remove the opacity effect */
+    transition: transform 0.3s ease; /* Change transition to transform for hover effect */
 }
 
 .sponsors-carousel img:hover {
-    opacity: 1;
+    transform: scale(1.05); /* Subtle scale effect on hover instead of opacity change */
 }
 
 /* Header Sections */
 .studio-header, .studio-header1 {
     text-align: left;
     padding: 80px 50px;
-    background-color: #1E1E1E;
-    color: #EFEFEF;
+    background-color: #EFEFEF;
+    color: #000;
     margin-top: 0;
 }
 
 .studio-header h1, .studio-header1 h1 {
     font-size: 6rem;
     margin: 0;
-    color: #EFEFEF;
+    color: #000;
     font-weight: 800;
     letter-spacing: -2px;
     line-height: 1;
@@ -312,8 +310,8 @@ body {
 /* About Section */
 .about-section {
     padding: 80px 50px;
-    background-color: #1E1E1E;
-    color: #EFEFEF;
+    background-color: #EFEFEF;
+    color: #000;
 }
 
 .about-section p {
@@ -327,13 +325,13 @@ body {
 /* Agency Features */
 .agency-features {
     padding: 80px 50px;
-    background-color: #1E1E1E;
-    color: #EFEFEF;
+    background-color: #EFEFEF;
+    color: #000;
 }
 
 .agency-features h2 {
     font-size: 4rem;
-    color: #EFEFEF;
+    color: #000;
     margin-bottom: 40px;
     font-weight: 800;
     letter-spacing: -1px;
@@ -358,14 +356,14 @@ body {
 }
 
 @keyframes scroll-sponsors {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-200px * 5 - 40px * 5)); }
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 /* Why Clients Seek Us Out Section */
 .why-clients-choose-us {
     padding: 50px 50px;
-    background-color: #F4F4F4;
+    background-color: #EFEFEF;
 }
 
 .why-clients-choose-us h2 {
@@ -417,7 +415,7 @@ body {
 
 .stat-item h3 {
     font-size: 1.8rem;
-    color: #777; /* Slightly softer text */
+    color: #000; /* Slightly softer text */
     margin-bottom: 10px;
 }
 
@@ -455,13 +453,13 @@ body {
 .process {
     padding: 80px 20px;
     background-color: #EFEFEF;
-    color: #333;
+    color: #000;
 }
 
 .process h2 {
     text-align: center;
     margin-bottom: 40px;
-    color: #333;
+    color: #000;
     font-size: 3rem; 
 }
 
@@ -473,10 +471,10 @@ body {
 
 .process-item {
     padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
+    background-color: #EFEFEF;
+    border-radius: 0;
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 .number {
@@ -485,9 +483,9 @@ body {
     left: 20px;
     width: 30px;
     height: 30px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 50%;
+    background-color: #000;
+    color: #EFEFEF;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -496,7 +494,7 @@ body {
 
 .process-item h3 {
     margin: 15px 0;
-    color: #333;
+    color: #000;
 }
 
 /* Responsive Design */
@@ -540,9 +538,10 @@ body {
 .service-item {
     display: flex;
     gap: 20px;
-    background-color: #fff;
+    background-color: #EFEFEF;
+    border: 1px solid #000;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0;
     transition: transform 0.3s ease;
 }
 
@@ -649,9 +648,10 @@ body {
 }
 
 .testimonial-item {
-    background-color: #fff;
+    background-color: #EFEFEF;
+    border: 1px solid #000;
+    border-radius: 0;
     padding: 30px;
-    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -698,8 +698,8 @@ body {
 /* Call to Action Section */
 .cta-section {
     padding: 100px 50px;
-    background-color: #1E1E1E;
-    color: #EFEFEF;
+    background-color: #EFEFEF;
+    color: #000;
     text-align: center;
 }
 
@@ -728,17 +728,18 @@ body {
 .cta-btn {
     display: inline-block;
     padding: 15px 40px;
-    background-color: #EFEFEF;
-    color: #1E1E1E;
+    background-color: #000;
+    color: #EFEFEF;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 0;
     transition: all 0.3s ease;
     font-size: 1.1rem;
 }
 
 .cta-btn:hover {
-    background-color: #fff;
+    background-color: #333;
+    color: #EFEFEF;
     transform: translateY(-2px);
 }
 
