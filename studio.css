@@ -270,23 +270,24 @@ body {
     display: flex;
     padding: 40px 0;
     background-color: #EFEFEF;
-    gap: 40px;
-    animation: scroll-sponsors 25s linear infinite;
+    gap: 60px;
+    animation: scroll-sponsors 30s linear infinite;
     width: fit-content;
     will-change: transform;
-    transform: translateX(100%);
+    transform: translateX(0);
 }
 
 .sponsors-carousel img {
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 150px;
     object-fit: contain;
-    opacity: 1; /* Remove the opacity effect */
-    transition: transform 0.3s ease; /* Change transition to transform for hover effect */
+    opacity: 1;
+    transition: transform 0.3s ease;
+    filter: brightness(0);
 }
 
 .sponsors-carousel img:hover {
-    transform: scale(1.05); /* Subtle scale effect on hover instead of opacity change */
+    transform: scale(1.05);
 }
 
 /* Header Sections */
@@ -356,8 +357,8 @@ body {
 }
 
 @keyframes scroll-sponsors {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 8 - 60px * 8)); }
 }
 
 /* Why Clients Seek Us Out Section */
